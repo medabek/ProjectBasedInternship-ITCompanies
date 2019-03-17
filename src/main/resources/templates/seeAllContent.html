@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>All places</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../sources/img/comLogo.jpg" type="image/png">
+    <link rel="stylesheet" href="./sources/css/other.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" th:src="@{/sources/js/jquery-3.3.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/sources/js/jquery.backgroundMove.js}"></script>
+</head>
+
+<body class="move">
+<table class="tablecu" border="1">
+    <tr class="titler">
+        <th class="firstrowt">Title</th>
+        <th class="secrowc">Content</th>
+        <th class="secrowc"></th>
+    </tr>
+    <tr th:each = "tour: ${seeAllContents}">
+        <td class="firstrow" th:text="${tour.title}">Title</td>
+        <td class="secrow" th:text="${tour.content}">Content</td>
+        <td class="del"><a th:href="@{/delete_content/__${tour.id}__}" class="btn btn-danger">Delete</a></td>
+        <td class="upd"><a th:href="@{/update_content/__${tour.id}__}" class="btn btn-danger">Update</a></td>
+
+    </tr>
+</table>
+<br>
+<a style="color: #fff0f0;
+font-family: 'Times New Roman';
+font-size:40px;font-weight: bold;
+padding-left:38cm;"th:href="@{/admin/home}">BACK</a>
+
+<div class="container">
+    <script type="text/javascript">
+        $('.move').backgroundMove(({
+            movementStrength: '30'
+        }));
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>KG IT</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Simple Signin Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements"
+	/>
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+
+	<link rel="icon" href="../sources/img/comLogo.jpg" type="image/png">
+	<link rel="stylesheet" href="./sources/css/login-style.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="./sources/css/font-awesome.css">
+	<link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/other.css}" />
+    <script type="text/javascript" th:src="@{/sources/js/jquery-3.3.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/sources/js/jquery.backgroundMove.js}"></script>
+</head>
+
+<body class="move" style="background-image: url(https://teogroup.ru/wp-content/uploads/2016/12/1.jpeg)">
+	<div class="header-w3l">
+		<h1>
+			K<span>G </span>IT<span> Co</span>m<span>p</span>a<span>ni</span>es
+		</h1>
+	</div>
+	<div class="main-content-agile">
+		<div class="sub-main-w3">
+			<h2>Sign In Now</h2>
+			<form th:action="@{/login}" method="post">
+				<label>Email</label>
+				<div class="pom-agile">
+					<span class="fa fa-envelope" aria-hidden="true"></span>
+					<input placeholder="Email" name="email" class="user" type="email" required="">
+				</div>
+				<label>Password</label>
+				<div class="pom-agile">
+					<span class="fa fa-key" aria-hidden="true"></span>
+					<input placeholder="Password" name="password" class="pass" type="password" required="">
+				</div>
+				<div class="right-w3l">
+					<input type="submit" value="Sign in" >
+				</div>
+				<div align="center" th:if="${param.error}">
+					<p style="font-size:20px; color: #FF1C19;">Email or Password invalid, please verify</p>
+				</div>
+                <div class="text-center w-full">
+                    <a class="txt1" th:href="@{registration}">
+                        Create new account
+                        <i class="fa fa-long-arrow-right"></i>
+                    </a>
+                </div>
+				<div class="text-center w-full">
+					<a class="txt1" th:href="@{justin}">
+						Go as a Guest
+						<i class="fa fa-long-arrow-right"></i>
+					</a>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="footer">
+		<p>&copy; 2018 Simple Signin Form.
+		</p>
+	</div>
+<script type="text/javascript">
+        $('.move').backgroundMove(({
+            movementStrength: '30'
+        }));
+    </script>
+</body>
+</html>

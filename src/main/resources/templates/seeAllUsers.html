@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Users</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../sources/img/comLogo.jpg" type="image/png">
+    <link rel="stylesheet" href="/sources/css/other.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script	src="https://ajax.googleapis.com/ajuserax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" th:src="@{/sources/js/jquery-3.3.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/sources/js/jquery.backgroundMove.js}"></script>
+</head>
+<body class="move">
+<table class="users" border="1">
+    <tr class="titler">
+        <th class="firstrowt">First Name</th>
+        <th class="firstrowt">Last Name</th>
+        <th class="firstrowt">Email</th>
+        <th class="secrowt"></th>
+    </tr>
+    <tr th:each = "user: ${seeAllUsers}">
+        <td  class="secrowt" th:text="${user.name}">First Name</td>
+        <td class="secrowt" th:text="${user.lastName}">Last Name</td>
+        <td class="secrowt" th:text="${user.email}">Email</td>
+        <td class="del"><a th:href="@{/delete_user/__${user.id}__}" class="btn btn-danger">Delete</a></td>
+    </tr>
+</table>
+<a style="color: #ffffff; font-family: 'Times New Roman';font-size:30px;font-weight: bold;
+padding-left:38cm" th:href="@{/admin/home}">BACK</a>
+<div class="container">
+    <script type="text/javascript">
+        $('.move').backgroundMove(({
+            movementStrength: '30'
+        }));
+    </script>
+</div>
+</body>
+</html>

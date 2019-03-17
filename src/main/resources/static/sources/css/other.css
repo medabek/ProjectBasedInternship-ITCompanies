@@ -1,0 +1,72 @@
+.move {
+    background: url(https://teogroup.ru/wp-content/uploads/2016/12/1.jpeg) repeat-y;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;
+}
+form {
+    font-family: "Times New Roman";
+    font-size: 25px;
+    color:#000000;
+    padding-left: 30px;
+}
+input text{
+    padding-top: 15cm;
+    padding-bottom: 12cm;
+}
+
+
+.like,.save{
+    color: #6610f2;
+    font-family: "Times New Roman";
+    font-size: 25px;
+    font-style: italic;
+}
+
+
+h2{
+    color: #FFFFFF;
+}
+.tablecu,.users{
+    border:3px solid #fff0f0;
+    padding: 0 50px;
+}
+.users{
+    width: 100%;
+    font-family: "Times New Roman";
+    text-align: center;
+    font-size:20px;
+    color: #FFFFFF
+}
+.firstrowt,.firstrow,.secrowc,.users{
+    font-family: "Times New Roman";
+    text-align: center;
+    font-size:30px;
+    color: #FFFFFF;
+}
+.firstrow{
+    width: 5cm;
+}
+.secrow{
+    font-family: "Times New Roman";
+    font-size: 15px;
+}
+.secrowt{
+    font-family: "Times New Roman";
+    font-size: 25px;
+    color:#000000;
+}
+.tablecu .titler, .users{
+    height: 15px;
+}
+.del, .upd{
+    width: 3cm;
+    font-size: 20px;
+    text-align: center;
+}

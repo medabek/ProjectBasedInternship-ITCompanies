@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Add new place</title>
+    <link rel="icon" href="../sources/img/comLogo.jpg" type="image/png">
+    <link rel="stylesheet" href="./sources/css/other.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./sources/css/bootstrap.min.css" type="text/css" media="all">
+    <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" th:src="@{/sources/js/jquery-3.3.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/sources/js/jquery.backgroundMove.js}"></script>
+</head>
+
+<body class="move">
+<form method="post" enctype="multipart/form-data" action="/createContent" style="color: white;">
+    Title:<br>
+    <input type="text" name="title" style="color: black;"><br>
+    Content:<br>
+    <textarea rows="8" cols="20" type="text" name="content" style="color: black"></textarea>
+    <table>
+        <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
+
+    </table>
+    <input type="submit" value="Upload" />
+    <!--<button type="submit" value="Submit">Submit</button>-->
+    <br>
+    <a style="font-family: 'Times New Roman';
+font-size: 40px;
+color: #6f42c1;
+font-weight: bold;
+padding-left: 25px;
+padding-top: 15px" th:href="@{/userHome}">See all places</a>
+    <a style="color: #ffffff; font-family: 'Times New Roman';font-size:30px;
+padding-left:12cm" th:href="@{/admin/home}">BACK</a>
+</form>
+
+<div th:if="${message}">
+    <h2 th:text="${message}"/>
+</div>
+
+
+<div class="container">
+
+    <script type="text/javascript">
+        $('.move').backgroundMove(({
+            movementStrength: '30'
+        }));
+    </script>
+
+</div>
+</body>
+</html>

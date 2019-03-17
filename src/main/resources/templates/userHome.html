@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>IT KG</title>
+	<meta name="description" content="Creators of Vintage era meets Modern age caravans! Proudly custom made in Gold Coast Queensland, Australia." />
+	<meta property="og:title" content="Jackaroo Caravans | Vintage Era Meets Modern Age">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://jackaroocaravans.com.au/">
+	<meta property="og:image" content="http://jackaroocaravans.com.au/assets/img/facebook-share.jpg" />
+	<meta property="og:description" content="Creators of Vintage era meets Modern age caravans! Proudly custom made in Gold Coast Queensland, Australia.">
+	<meta property="og:site_name" content="Jackaroo Caravans">
+	<meta property="og:email" content="sales@jackaroocaravans.com.au">
+	<meta property="og:region" content="AU">
+	<link href="http://jackaroocaravans.com.au/" rel="home">
+	<link rel="icon" href="/sources/img/KARTA-KIRGIZSTAN-1.png" type="image/png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" type="text/css" th:href="@{/sources/css/jackaroo.css}" />
+    <link rel="stylesheet" href="/sources/css/other.css" type="text/css" media="all" />
+	</head>
+<body>
+
+<header>
+	<nav>
+		<div class="nav-block left"><a href="#home" class="vert-wrap"><span class="vert-this">Home</span></a><a href="#gallery" class="vert-wrap"><span class="vert-this">Gallery</span></a></div>
+		<section class="logo-banner-wrap">
+			<div class="logo-banner vert-wrap"><span class="logo"><img src="../sources/img/comLogo.jpg"></span></div>
+		</section>
+		<div class="nav-block right"><a href="#features" class="vert-wrap"><span class="vert-this">Top Companies</span></a> <a href="#myPlaces" class="vert-wrap"><span class="vert-this">Prefered</span></a></div>
+	</nav>
+</header>
+<section class="intro-fold js-an-section move"
+		 id="home"
+		 style="background:
+		 url(https://teogroup.ru/wp-content/uploads/2016/12/1.jpeg)no-repeat;
+background-size: cover;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+-ms-background-size: cover;
+background-attachment: fixed;
+background-position: center;">
+	<section class="intro-header">
+
+		<section class="the-nav vert-wrap">
+			<div class="vert-this">
+				<nav role="navigation" class="navigation">
+					<ul class="nav-menu">
+						<li><a href="#home">Home</a></li>
+						<li><a href="#gallery">Gallery</a></li>
+						<li><a href="#features">Top Companies</a></li>
+						<li><a href="#myPlaces">Prefered</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                        <li class="formSublime">
+                            <form method="get" action="/searchContent">
+                                <input name="text" type="text" id="input">
+                                <button type="submit" value="Submit">Search</button>
+                            </form>
+                        </li>
+					</ul>
+				</nav>
+			</div>
+		</section>
+	</section>
+	<section class="text-overlay-wrap vert-wrap">
+		<div class="customArrow"><img src="/sources/img/sunset.png"/></div>
+		<h1 class="text-overlay vert-this" style="color: #ffffff;font-family: 'Times New Roman'"><span>KG IT Companies</span><span class="lined">Meets</span><span>Modern Age.</span></h1>
+	</section>
+	<style>
+		.customArrow {
+			width: 64px;
+			margin: -200px auto;
+            cursor: pointer;
+		}
+	</style>
+</section>
+<section class="gallery-wrap js-an-section" id="gallery">
+
+	<section class="gallery-outer-wrap">
+		<section class="slide-these js-slider" tabindex="8">
+			<section class="slider-outer">
+				<ul class="slider-wrap">
+					<li class="slider-item vert-wrap" th:each="content: ${seeAllContents}">
+						<div class="image-wrap vert-this">
+							<svg class="svgImg" preserveAspectRatio="xMinYMin meet" align="center" xml:space="preserve" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 872 562">
+                              <defs>
+                                 <mask id="e5c364321c3fbc2c69595eab475c895f3147401f">
+                                    <image width="872" height="562" xlink:href="http://jackaroocaravans.com.au/assets/img/gallery/gallery-alpha.png"></image>
+                                 </mask>
+                              </defs>
+                              <image th:mask="'url('+ ${content.getTour_img_name()} +')'" overflow="hidden" width="872" height="562" th:xlink:href="${content.getTour_img_name()}"></image>
+                           </svg>
+						</div>
+					</li>
+				</ul>
+			</section>
+		</section>
+	</section>
+
+	<section class="flip-view">
+		<ul class="flip-view-images">
+            <c th:each="content: ${contents}">
+				<li th:style="'background-image: url('+${content.getTour_img_name()}+');'">
+					<a th:href="'/content?id=' + ${content.getId()}">
+						<div class="text-thing-wrap vert-wrap">
+							<div class="text-thing vert-this">
+								<h2 th:utext="${content.getTitle()}"></h2>
+							</div>
+						</div>
+					</a>
+				</li>
+            </c>
+		</ul>
+	</section>
+</section>
+<section class="accordion-area js-an-section js-accordion" id="features">
+	<section class="accordion-wrapper blue active js-acc-item">
+		<section class="acc-head">
+			<h3>The Popular Companies</h3>
+			<span class="icon js-toggle"></span>
+		</section>
+		<section class="acc-body js-acc-body">
+			<ul class="master-ul">
+                <li class="an-li" th:each="cont:${seeAllContents}">
+                    <ul>
+                        <a th:href="'/content?id=' + ${cont.getId()}"><li th:utext="${cont.getTitle()}"></li></a>
+                    </ul>
+                </li>
+			</ul>
+		</section>
+	</section>
+	<section class="accordion-wrapper orange active js-acc-item" id="myPlaces">
+		<section class="acc-head">
+			<h3>Companies which I prefer</h3>
+			<span class="icon js-toggle"></span>
+		</section>
+		<section class="acc-body js-acc-body">
+			<ul class="master-ul">
+				<li class="an-li" th:each="place:${places}">
+					<ul>
+                        <a th:href="'/content?id=' + ${place.getTourPlace().getId()}"><li th:utext="${place.getTourPlace().getTitle()}"></li></a>
+					</ul>
+				</li>
+			</ul>
+		</section>
+	</section>
+</section>
+
+<footer>
+	<section class="container">
+		<section class="inline-blocks"> Copyright &copy; 2018 KG IT</section>
+		<section class="inline-blocks right">
+            <a href="https://www.facebook.com/jackaroocaravans" target="_blank"> Facebook </a>
+            <a href="http://instagram.com/jackaroocaravans" target="_blank"> Instagram </a>
+            <a href="#" class="js-to-top">Back To Top</a> </section>
+	</section>
+</footer>
+
+<section class="design-by-forty"> Made with <span class="love">love</span> <span class="by">by</span> 40/40 MedAbd </section>
+<script data-cfasync="false" src="/cdn-cgi/scripts/d07b1474/cloudflare-static/email-decode.min.js"></script>
+<script type="text/javascript" th:src="@{/sources/js/jquery-3.3.1.min.js}"></script>
+<script type="text/javascript" th:src="@{/sources/js/jquery.backgroundMove.js}"></script>
+<script type="text/javascript">
+    $('.move').backgroundMove(({
+        movementStrength: '30'
+    }));
+</script>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://jackaroocaravans.com.au/assets/js/jquery.min.js"><\/script>');</script>
+<script type="text/javascript">var site = { baseUrl: 'http://jackaroocaravans.com.au/', insti: {clientid: '1427894636', apikey: '1427894636.66de957.71c3c1bea56a44be976a57f2fd949382'} }</script>
+<script type="text/javascript" src="http://jackaroocaravans.com.au/assets/js/libs.min.js"></script>
+<script type="text/javascript" src="http://jackaroocaravans.com.au/assets/js/website.min.js"></script>
+<script>
+
+    $( document ).ready(function() {
+        $(".customArrow").click(function() {
+            $('html, body').animate({
+                scrollTop: $(".slider-wrap").offset().top
+            }, 1000);
+        });
+    });
+</script>
+</html>
+
+
+
+
+

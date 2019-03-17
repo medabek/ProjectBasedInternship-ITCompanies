@@ -1,0 +1,115 @@
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Registration</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Simple Signin Form Responsive Widget,Login form widgets,
+	Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,
+	Registration Forms,News letter Forms,Elements"/>
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<link rel="icon" href="../sources/img/comLogo.jpg" type="image/png">
+	<link rel="stylesheet" href="./sources/css/login-style.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="./sources/css/font-awesome.css">
+	<script src="sources/js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <script type="text/javascript" th:src="@{/sources/js/jquery-3.3.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/sources/js/jquery.backgroundMove.js}"></script>
+</head>
+
+<body class="move" style= "background: url(https://teogroup.ru/wp-content/uploads/2016/12/1.jpeg)no-repeat;
+background-size: cover;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+-ms-background-size: cover;
+background-attachment: fixed;
+background-position: center;">
+	<div class="header-w3l">
+		<h1>
+            Re<span>g</span>is<span>t</span>rat<span>i</span>on Fo<span>r</span>m
+		</h1>
+	</div>
+
+	<div class="main-content-agile">
+		<div class="sub-main-w3">
+			<h2>Register Now</h2>
+			<form th:action="@{/registration}"
+				  th:object="${user}" method="post">
+				<label>Email</label>
+				<div class="pom-agile">
+					<span class="fa fa-envelope" aria-hidden="true"></span>
+					<input placeholder="Email" th:field="*{email}" class="user" type="email" required="">
+					<label
+							th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+							class="validation-message"></label>
+				</div>
+				
+				<label>First Name</label>
+				<div class="pom-agile">
+					<span class="fa fa-tag" aria-hidden="true"></span>
+					<input placeholder="First Name" th:field="*{name}" class="user" type="text" required="">
+					<label th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+						   class="validation-message"></label>
+				</div>
+				<label>Last Name</label>
+				<div class="pom-agile">
+					<span class="fa fa-pencil" aria-hidden="true"></span>
+					<input placeholder="Last Name" th:field="*{lastName}" class="user" type="text" required="">
+					<label	th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+							  class="validation-message"></label>
+				</div>
+				<label>Password</label>
+				<div class="pom-agile">
+					<span class="fa fa-key" aria-hidden="true"></span>
+					<input placeholder="Password" th:field="*{password}" class="pass" type="password" required="">
+					<label
+							th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+							class="validation-message"></label>
+				</div>
+				<div class="sub-w3l">
+					<div class="sub-agile">
+						<input type="checkbox" id="brand1" value="">
+						<label for="brand1">
+							Keep me Signed in</label>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="right-w3l">
+					<input type="submit" value="Sign in">
+				</div>
+				<span th:utext="${failedMessage}"></span>
+				<span th:utext="${successMessage}"></span>
+			</form>
+		</div>
+	</div>
+
+	<div class="footer">
+		<p>&copy; 2018 Simple Signin Form.
+		</p>
+	</div>
+
+    <script type="text/javascript">
+        $('.move').backgroundMove(({
+            movementStrength: '50'
+        }));
+    </script>
+</body>
+
+</html>

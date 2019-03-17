@@ -1,0 +1,17 @@
+.move {
+    background: url(../img/Altyn-Arashan-10.jpg) repeat-y;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;
+}
+.header-right li a{
+    font-size: 60px;
+    font-family: "Times New Roman";
+    color: #fd7e14;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="../sources/css/admin.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="icon" href="../sources/img/comLogo.jpg" type="image/png">
+    <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" th:src="@{/sources/js/jquery-3.3.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/sources/js/jquery.backgroundMove.js}"></script>
+
+</head>
+
+<body class="move" style="background-image: url(https://teogroup.ru/wp-content/uploads/2016/12/1.jpeg)">
+<header class="clearfix">
+    <div class="container">
+        <div class="header-right" style="text-align: center">
+            <nav>
+                <ul>
+                <li style="color: white"><a th:href="@{#home}">Home</a> </li>
+                <li style="color: white"><a th:href="@{/addContent}">Add IT Company</a></li>
+                <li style="color: white"><a th:href="@{/seeAllUsers}">Visitors</a></li>
+                <li style="color: white"><a href="/logout">Log out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<script type="text/javascript">
+    $('.move').backgroundMove(({
+        movementStrength: '30'
+    }));
+</script>
+</body>
+</html>
